@@ -2,43 +2,43 @@
   "comments": [
     {
       "id": 1,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id leo non turpis vestibulum rhoncus eget sit amet erat. Fusce aliquet lacus nec purus finibus, sit amet cursus mauris imperdiet.",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id leo non turpis vestibulum rhoncus eget sit amet erat. Fusce aliquet lacus nec purus finibus, sit amet cursus mauris imperdiet.",
       "time": 12,
       "type": "comment"
     },
     {
       "id": 2,
-      "body": "Mauris placerat lacus a efficitur tincidunt. Donec auctor erat semper pharetra vehicula. Fusce eleifend velit sit amet mi mattis, at ultrices nisi tempus.",
+      "message": "Mauris placerat lacus a efficitur tincidunt. Donec auctor erat semper pharetra vehicula. Fusce eleifend velit sit amet mi mattis, at ultrices nisi tempus.",
       "time": 14,
       "type": "comment"
     },
     {
       "id": 3,
-      "body": "Nunc at orci a dolor tristique porta eget ut augue. Sed euismod enim sed ipsum volutpat convallis.",
+      "message": "Nunc at orci a dolor tristique porta eget ut augue. Sed euismod enim sed ipsum volutpat convallis.",
       "time": 17,
       "type": "comment"
     },
     {
       "id": 4,
-      "body": "In dictum erat in suscipit pellentesque.",
+      "message": "In dictum erat in suscipit pellentesque.",
       "time": 21,
       "type": "comment"
     },
     {
       "id": 5,
-      "body": "Cras sed leo ac velit ultricies eleifend quis nec mi. Sed fringilla ante eu mauris ornare, malesuada sodales quam imperdiet.",
+      "message": "Cras sed leo ac velit ultricies eleifend quis nec mi. Sed fringilla ante eu mauris ornare, malesuada sodales quam imperdiet.",
       "time": 28,
       "type": "comment"
     },
     {
       "id": 6,
-      "body": "Vestibulum mollis turpis nec augue mattis euismod. Sed at purus ut est lobortis sodales ut ut quam. Aenean sagittis elit in augue tincidunt facilisis.",
+      "message": "Vestibulum mollis turpis nec augue mattis euismod. Sed at purus ut est lobortis sodales ut ut quam. Aenean sagittis elit in augue tincidunt facilisis.",
       "time": 29,
       "type": "comment"
     },
     {
       "id": 7,
-      "body": "Pellentesque sed magna vel tellus mollis laoreet. Aenean viverra mauris sed maximus volutpat. Proin eget nisl vel massa interdum commodo at in tortor.",
+      "message": "Pellentesque sed magna vel tellus mollis laoreet. Aenean viverra mauris sed maximus volutpat. Proin eget nisl vel massa interdum commodo at in tortor.",
       "time": 31,
       "type": "comment"
     }
@@ -46,19 +46,19 @@
   "moments": [
     {
       "id": 1,
-      "body": "Yellow card",
+      "message": "Yellow card",
       "time": 12,
       "type": "moment"
     },
     {
       "id": 2,
-      "body": "Goal",
+      "message": "Goal",
       "time": 21,
       "type": "moment"
     },
     {
       "id": 3,
-      "body": "Save",
+      "message": "Save",
       "time": 28,
       "type": "moment"
     }

@@ -10,8 +10,8 @@ export default class Moment extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.time}</div>
-        <div>{this.props.message}</div>
+        <div>{this.props.data.time}</div>
+        <div>{this.props.data.message}</div>
       </div>
     );
   }

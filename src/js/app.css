@@ -1,0 +1,19 @@
+.holder {
+  display: flex;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.commentaries {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.moments {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+

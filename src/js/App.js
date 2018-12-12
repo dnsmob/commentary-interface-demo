@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Comment from './components/Comment'
-import Moment from './components/Moment'
+import Comment from './components/Comment';
+import Moment from './components/Moment';
+import './app.css';
 
 
 export default class App extends Component {
@@ -56,31 +57,31 @@ export default class App extends Component {
 
   render() {
     return (
-      <div style={styles}>
-        <div>
+      <div className="holder">
+        <div className="commentaries">
           Live commentary
-          {this.state.comments.map(
-            (item, count) => <Comment key={count} data={item} />
+          {this.state.comments.map((item, count) =>
+            <Comment
+              key={count}
+              data={item}
+            />
           )}
         </div>
-        <div>
+        <div className="moments">
           Key moments
-          {this.state.moments.map(
-            (item, count) => <Moment key={count} data={item} />
+          {this.state.moments.map((item, count) =>
+            <Moment
+              key={count}
+              data={item}
+            />
           )}
         </div>
       </div>
     );
   }
 }
-
-
-const styles = {
-  display: 'flex',
-  flex: 1,
-  maxWidth: '600px',
-  margin: '0 auto'
-}
+App.COMMENT = 'comment';
+App.MOMENT = 'moment';
 
 
 const wrapper = document.getElementById("container");
