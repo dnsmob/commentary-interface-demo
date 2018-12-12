@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Comment from './components/comments/Comment'
+import Comment from './components/Comment'
+import Moment from './components/Moment'
 
 
 export default class App extends Component {
@@ -21,8 +22,7 @@ export default class App extends Component {
     fetch('http://localhost:3000/comments')
       .then(response => response.json())
       .then(json => {
-        let array = this._mixIntoComments(json).sort((a, b) => (a.time - b.time));
-        this.setState({ comments: array });
+        this.setState({ comments: this._mixIntoComments(json) });
       })
       .catch(error =>
         this.setState({
@@ -46,7 +46,8 @@ export default class App extends Component {
   }
 
   _mixIntoComments(array) {
-    return this.state.comments.concat(array);
+    // moments get injected into comments and sort by time
+    return this.state.comments.concat(array).sort((a, b) => (a.time - b.time));
   }
 
   _handleResponse(json) {
@@ -57,15 +58,22 @@ export default class App extends Component {
     return (
       <div style={styles}>
         <div>
-          {this.state.comments.map((item, count) => <Comment key={count} message={item.body} time={item.time} />)}
+          Live commentary
+          {this.state.comments.map(
+            (item, count) => <Comment key={count} data={item} />
+          )}
         </div>
         <div>
-          {this.state.moments.map((item, count) => <Comment key={count} message={item.body} time={item.time} />)}
+          Key moments
+          {this.state.moments.map(
+            (item, count) => <Moment key={count} data={item} />
+          )}
         </div>
       </div>
     );
   }
 }
+
 
 const styles = {
   display: 'flex',
