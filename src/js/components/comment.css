@@ -1,3 +1,45 @@
-.comment {
-  background: red;
+.commentaries .comment {
+  display: flex;
+  min-height: 45px;
+}
+
+.commentaries .comment > div:first-child, .commentaries .moment > div:first-child {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 30px;
+  border: 1px solid #36622b;
+  background: #fbfad3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.commentaries .comment > div.message, .commentaries .moment > div.message {
+  border-left: 1px solid #729d39;
+  margin: 0 0 0 15px;
+  padding: 0 0 0 20px;
+  padding-bottom: 10px;
+}
+
+
+.commentaries .moment {
+  display: none;
+  min-height: 45px;
+  background: #c6e377;
+}
+
+.commentaries .moment > div.message {
+  text-transform: uppercase;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .commentaries .moment {
+    display: flex;
+  }
 }

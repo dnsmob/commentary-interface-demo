@@ -1,3 +1,7 @@
+html {
+  font: 12px helvetica, arial, sans;
+}
+
 .holder {
   display: flex;
   flex: 1;
@@ -9,11 +13,19 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  font-size: 1.2em;
 }
 
 .moments {
   display: flex;
   flex-direction: column;
   width: 200px;
+  margin: 0 0 0 20px;
+  padding: 0 10px;
+  background: #729d39;
+}
+
+.moments > div {
+  font-size: 1.1em;
 }
 

@@ -8,10 +8,11 @@ export default class Moment extends Component {
   }
 
   render() {
+    const { time, message } = this.props.data;
+
     return (
-      <div>
-        <div>{this.props.data.time}</div>
-        <div>{this.props.data.message}</div>
+      <div onClick={() => this.props.clickCallback(time)}>
+        {time} - {message}
       </div>
     );
   }

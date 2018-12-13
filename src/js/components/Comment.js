@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import './comment.css';
-import './moment.css';
 import App from '../App';
 
 export default class Comment extends Component {
@@ -10,10 +9,12 @@ export default class Comment extends Component {
   }
 
   render() {
+    const { type, time, message } = this.props.data;
+    
     return (
-      <div className= { this.props.data.type === App.COMMENT ? 'comment' : 'moment'}>
-        <div>{this.props.data.time}</div>
-        <div>{this.props.data.message}</div>
+      <div className= { type === App.COMMENT ? 'comment' : 'moment'}>
+        <div>{time}</div>
+        <div className="message">{message}</div>
       </div>
     );
   }

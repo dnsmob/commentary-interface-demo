@@ -55,11 +55,17 @@ export default class App extends Component {
     this.setState({ comments: json });
   }
 
+  highlightNode(event){
+    // let this.state.comments
+    console.log('event', this.commentMap);
+    
+  }
+
   render() {
     return (
       <div className="holder">
         <div className="commentaries">
-          Live commentary
+          <h2>Live commentary</h2>
           {this.state.comments.map((item, count) =>
             <Comment
               key={count}
@@ -68,11 +74,12 @@ export default class App extends Component {
           )}
         </div>
         <div className="moments">
-          Key moments
+          <h2>Key moments</h2>
           {this.state.moments.map((item, count) =>
             <Moment
               key={count}
               data={item}
+              clickCallback={this.highlightNode.bind(this)}
             />
           )}
         </div>
