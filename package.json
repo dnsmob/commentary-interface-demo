@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack"
+    "start": "./node_modules/.bin/json-server --watch db.json --port 3004 & webpack-dev-server --open --mode development --port 3003"
   },
   "author": "",
   "license": "ISC",

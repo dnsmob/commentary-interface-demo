@@ -4,6 +4,7 @@ import Comment from './components/Comment';
 import Moment from './components/Moment';
 import './app.css';
 
+const server = 'http://localhost:3004';
 
 export default class App extends Component {
 
@@ -22,30 +23,22 @@ export default class App extends Component {
   }
 
   _loadComments() {
-    fetch('http://localhost:3000/comments')
+    fetch(`${server}/comments`)
       .then(response => response.json())
       .then(json => {
         this.setState({ comments: this._mixIntoComments(json) });
       })
-      .catch(error =>
-        this.setState({
-          isLoading: false,
-          message: 'Something bad happened ' + error
-        }));
+      .catch(error => console.log('Something bad happened ' + error));
   }
 
   _loadMoments() {
-    fetch('http://localhost:3000/moments')
+    fetch(`${server}/moments`)
       .then(response => response.json())
       .then(json => {
         this.setState({ comments: this._mixIntoComments(json) })
         this.setState({ moments: json });
       })
-      .catch(error =>
-        this.setState({
-          isLoading: false,
-          message: 'Something bad happened ' + error
-        }));
+      .catch(error => console.log('Something bad happened ' + error));
   }
 
   _mixIntoComments(array) {
