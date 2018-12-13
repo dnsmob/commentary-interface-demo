@@ -51,11 +51,13 @@ export default class App extends Component {
   _mixIntoComments(array) {
     // moments get injected into comments and sort by time
     return this.state.comments.concat(array).sort((a, b) => {
-      if (a.type === App.MOMENT){
-        return 1;
-      } 
+      // sort on times
+      if (a.time > b.time) return 1;
+      if (a.time < b.time) return -1;
 
-      return a.time - b.time
+      // sort on moments
+      if (a.type > b.type) return -1;
+      if (a.type < b.type) return 1;
     });
   }
 
@@ -64,14 +66,11 @@ export default class App extends Component {
   }
 
   highlightNode(time) {
-    // cleaning up via dom manipulation as it might be more performant than changing states
+    // cleaning up via css/dom manipulation as it might be more performant than changing states
     document.querySelectorAll('.highlighted').forEach(item => item.classList.remove('highlighted'));
 
-    const entry = this.mappedComments
-      .filter(node => node.props.data.type === App.COMMENT && node.props.data.time === time)[0];
-
+    const entry = this.mappedComments.filter(node => node.props.data.type === App.COMMENT && node.props.data.time === time)[0];
     const node = ReactDOM.findDOMNode(entry.ref.current);
-
     node.classList.add('highlighted');
   }
 

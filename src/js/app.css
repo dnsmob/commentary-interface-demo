@@ -29,3 +29,8 @@ html {
   font-size: 1.1em;
 }
 
+@media screen and (max-width: 600px) {
+  .moments {
+    display: none;
+  }
+}

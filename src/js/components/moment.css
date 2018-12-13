@@ -1,29 +1,7 @@
-.moment {
-  background: red;
-  display: flex;
-  min-height: 45px;
-}
-
-.moment > div:first-child {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  border-radius: 30px;
-  border: 1px solid green;
-  background: #fff;
-}
-
-.moment > div:first-child > span {
-  transform: translate(-50%, -50%);
-  display: inline-block;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-}
-
-.moment > div.message {
-  border-left: 1px solid green;
-  margin: 0 0 0 15px;
-  padding: 0 0 0 20px;
-  padding-bottom: 10px;
+.moments > div {
+  background: #c6e377;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0 0 10px 0;
+  padding: 10px;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import './moment.css';
 
 export default class Moment extends Component {
 
