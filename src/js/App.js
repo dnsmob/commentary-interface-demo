@@ -14,7 +14,9 @@ export default class App extends Component {
       comments: [],
       moments: []
     }
+  }
 
+  componentDidMount() {
     this._loadComments();
     this._loadMoments();
   }
@@ -48,30 +50,45 @@ export default class App extends Component {
 
   _mixIntoComments(array) {
     // moments get injected into comments and sort by time
-    return this.state.comments.concat(array).sort((a, b) => (a.time - b.time));
+    return this.state.comments.concat(array).sort((a, b) => {
+      if (a.type === App.MOMENT){
+        return 1;
+      } 
+
+      return a.time - b.time
+    });
   }
 
   _handleResponse(json) {
     this.setState({ comments: json });
   }
 
-  highlightNode(event){
-    // let this.state.comments
-    console.log('event', this.commentMap);
-    
+  highlightNode(time) {
+    // cleaning up via dom manipulation as it might be more performant than changing states
+    document.querySelectorAll('.highlighted').forEach(item => item.classList.remove('highlighted'));
+
+    const entry = this.mappedComments
+      .filter(node => node.props.data.type === App.COMMENT && node.props.data.time === time)[0];
+
+    const node = ReactDOM.findDOMNode(entry.ref.current);
+
+    node.classList.add('highlighted');
   }
 
   render() {
+    this.mappedComments = this.state.comments.map((item, count) =>
+      <Comment
+        key={count}
+        data={item}
+        ref={React.createRef()}
+      />
+    )
+
     return (
       <div className="holder">
         <div className="commentaries">
           <h2>Live commentary</h2>
-          {this.state.comments.map((item, count) =>
-            <Comment
-              key={count}
-              data={item}
-            />
-          )}
+          {this.mappedComments}
         </div>
         <div className="moments">
           <h2>Key moments</h2>
