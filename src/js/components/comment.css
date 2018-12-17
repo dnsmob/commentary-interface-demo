@@ -1,5 +1,6 @@
 .commentaries .comment {
   display: flex;
+  padding: 0 0 0 10px;
   min-height: 45px;
 }
 
@@ -8,23 +9,36 @@
   height: 30px;
   position: absolute;
   border-radius: 30px;
-  border: 1px solid #36622b;
+  border: 1px solid #474f85;
   background: #fbfad3;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  transform: translateY(10px);
 }
 
 .commentaries .comment > div.message, .commentaries .moment > div.message {
-  border-left: 1px solid #729d39;
+  border-left: 1px solid #ae7c7c;
   margin: 0 0 0 15px;
   padding: 0 0 0 20px;
-  padding-bottom: 10px;
+  display: flex;
+  flex: 1;
 }
 
-.commentaries .highlighted {
-  background: #36622b;
+.commentaries .comment > div.message > span, .commentaries .moment > div.message > span {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  min-height: 32px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  transition: all .35s;
+}
+
+.commentaries .highlighted span {
+  background: #474f85;
 }
 
 .commentaries .comment.highlighted > div.message {
@@ -34,7 +48,9 @@
 .commentaries .moment {
   display: none;
   min-height: 45px;
-  background: #c6e377;
+  background: #f3ecd3;
+  border-radius: 5px;
+  padding: 0 0 0 10px;
 }
 
 .commentaries .moment > div.message {

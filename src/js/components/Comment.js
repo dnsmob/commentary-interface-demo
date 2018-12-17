@@ -14,7 +14,7 @@ export default class Comment extends Component {
     return (
       <div className= { type === App.COMMENT ? 'comment' : 'moment'}>
         <div>{time}</div>
-        <div className="message">{message}</div>
+        <div className="message"><span>{message}</span></div>
       </div>
     );
   }

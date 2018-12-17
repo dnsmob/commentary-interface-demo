@@ -65,6 +65,8 @@ export default class App extends Component {
     const entry = this.mappedComments.filter(node => node.props.data.type === App.COMMENT && node.props.data.time === time)[0];
     const node = ReactDOM.findDOMNode(entry.ref.current);
     node.classList.add('highlighted');
+
+    node.scrollIntoView({ block: 'end',  behavior: 'smooth' });
   }
 
   render() {

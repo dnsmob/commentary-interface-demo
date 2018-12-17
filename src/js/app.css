@@ -22,7 +22,8 @@ html {
   width: 200px;
   margin: 0 0 0 20px;
   padding: 0 10px;
-  background: #729d39;
+  background: #ae7c7c;
+  border-radius: 5px;
 }
 
 .moments > div {
